@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "author": {
+        "avatarUrl": "https://github.com/SouzaVitoria.png",
+        "name": "Vitória Souza",
+        "role": "Tech Lead"
+      },
+      "publishedAt": "2022-10-07 08:30:00",
+      "content": [
+        { "type": "paragraph", "content": "Fala galeraa 👋" },
+        {
+          "type": "paragraph",
+          "content": "Acabei de subir mais um projeto no meu portifólio.É um projeto que fiz no Ignite Lab | React, evento da Rocketseat.O nome do projeto é Event Platform 🚀"
+        },
+        { "type": "link", "content": "👉 SouzaVitoria/eventplatform" },
+        { "type": "link", "content": "#novoprojeto" },
+        { "type": "link", "content": "#ignitelab" },
+        { "type": "link", "content": "#rocketseat" }
+      ]
+    },
+    {
+      "id": 2,
+      "author": {
+        "avatarUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQGkIyyktfzJJg/profile-displayphoto-shrink_800_800/0/1650757692071?e=1663200000&v=beta&t=ZO2bRjj2D5pgLghfD2D3OBUV6m307_TJoeWpwsJKHOQ",
+        "name": "Danilo Caraça",
+        "role": "Líder de produção"
+      },
+      "publishedAt": "2022-13-07 07:00:00",
+      "content": [
+        { "type": "paragraph", "content": "Fala galeraa 👋" },
+        {
+          "type": "paragraph",
+          "content": "Acabei de subir mais um projeto no meu portifólio.É um projeto que fiz no Ignite Lab | React, evento da Rocketseat.O nome do projeto é Event Platform 🚀"
+        },
+        { "type": "link", "content": "👉 SouzaVitoria/eventplatform" }
+      ]
+    }
+  ]
+}

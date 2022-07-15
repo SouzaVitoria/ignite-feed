@@ -2,22 +2,18 @@ import { Comment } from '../Comment/Comment';
 import { Avatar } from '../Avatar/Avatar';
 
 import styles from './Post.module.css';
+import { PostProps } from '../../typings/typings';
 
-interface PostProps {
-  author: string
-  job: string
-  avatar: string
-}
+export function Post({ author }: PostProps) {
 
-export function Post(props: PostProps) {
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar src={props.avatar} />
+          <Avatar src={author.avatarUrl} />
           <div className={styles.authorInfo}>
-            <strong>{props.author}</strong>
-            <span>{props.job}</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
 

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch db/posts.json -p 3004"
   },
   "dependencies": {
     "phosphor-react": "^1.4.1",
