@@ -1,5 +1,6 @@
 export interface PostProps {
-  key: string
+  key?: string
+  id?: string
   author: {
     avatarUrl: string
     name: string

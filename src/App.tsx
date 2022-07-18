@@ -18,8 +18,11 @@ export function App() {
     }
     loadPosts()
   }, [])
+  
+  console.log(posts)
 
   return (
+
     <div>
       <Header />
       <div className={styles.wrapper}>
@@ -28,7 +31,7 @@ export function App() {
           {posts.map(post => {
             return (
               <Post
-                key={post.key}
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}

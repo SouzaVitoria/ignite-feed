@@ -4,7 +4,19 @@ import { Avatar } from '../Avatar/Avatar';
 import styles from './Post.module.css';
 import { PostProps } from '../../typings/typings';
 
-export function Post({ author }: PostProps) {
+export function Post({ author, publishedAt }: PostProps) {
+  const publishedAtFormatted = new Date(publishedAt)
+  const publishedDateFormatted = new Intl.DateTimeFormat("pt-BR").format(publishedAtFormatted)
+
+  // const publishedDateFormatted = new Intl.DateTimeFormat("pt-BR", {
+  //   day: "2-digit",
+  //   month: "long"
+  // }).format(publishedAtFormatted)
+
+  console.log("props ", publishedAt)
+  console.log("new Date ", publishedAtFormatted)
+  console.log("Intl ", publishedDateFormatted)
+  console.log(publishedDateFormatted)
 
   return (
     <article className={styles.post}>
@@ -17,7 +29,7 @@ export function Post({ author }: PostProps) {
           </div>
         </div>
 
-        <time title="13 de Julho às 08:54h" dateTime="2022-07-13 08:54:00">Publicado agora</time>
+        <time title="13 de Julho às 08:54h" dateTime="2022-07-13 08:54:00">{publishedDateFormatted.toString()}</time>
       </header>
 
       <div className={styles.content}>
