@@ -1,3 +1,6 @@
+import { format, formatDistanceToNow } from "date-fns"
+import ptBR from "date-fns/locale/pt-BR"
+
 import { Comment } from '../Comment/Comment';
 import { Avatar } from '../Avatar/Avatar';
 
@@ -5,18 +8,14 @@ import styles from './Post.module.css';
 import { PostProps } from '../../typings/typings';
 
 export function Post({ author, publishedAt }: PostProps) {
-  const publishedAtFormatted = new Date(publishedAt)
-  const publishedDateFormatted = new Intl.DateTimeFormat("pt-BR").format(publishedAtFormatted)
-
-  // const publishedDateFormatted = new Intl.DateTimeFormat("pt-BR", {
-  //   day: "2-digit",
-  //   month: "long"
-  // }).format(publishedAtFormatted)
-
-  console.log("props ", publishedAt)
-  console.log("new Date ", publishedAtFormatted)
-  console.log("Intl ", publishedDateFormatted)
-  console.log(publishedDateFormatted)
+  const date = new Date(publishedAt)
+  const publishedDateFormatted = format(new Date(date), "d' de 'LLLL' de 'yyyy' às 'HH':'mm'h'", {
+    locale: ptBR
+  })
+  const publishedDateRelativeToNow = formatDistanceToNow(date, {
+    locale: ptBR,
+    addSuffix: true
+  })
 
   return (
     <article className={styles.post}>
@@ -29,7 +28,7 @@ export function Post({ author, publishedAt }: PostProps) {
           </div>
         </div>
 
-        <time title="13 de Julho às 08:54h" dateTime="2022-07-13 08:54:00">{publishedDateFormatted.toString()}</time>
+        <time title={publishedDateFormatted} dateTime={publishedAt.toString()}> {publishedDateRelativeToNow} </time>
       </header>
 
       <div className={styles.content}>

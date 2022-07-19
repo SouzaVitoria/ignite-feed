@@ -18,8 +18,6 @@ export function App() {
     }
     loadPosts()
   }, [])
-  
-  console.log(posts)
 
   return (
 
