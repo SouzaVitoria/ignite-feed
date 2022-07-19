@@ -8,7 +8,7 @@ export interface PostProps {
   }
   publishedAt: Date
   content: {
-    type: string
+    type: "paragraph" | "link"
     content: string
   }[]
 }

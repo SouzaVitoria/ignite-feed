@@ -7,7 +7,7 @@ import { Avatar } from '../Avatar/Avatar';
 import styles from './Post.module.css';
 import { PostProps } from '../../typings/typings';
 
-export function Post({ author, publishedAt }: PostProps) {
+export function Post({ author, publishedAt, content }: PostProps) {
   const date = new Date(publishedAt)
   const publishedDateFormatted = format(new Date(date), "d' de 'LLLL' de 'yyyy' às 'HH':'mm'h'", {
     locale: ptBR
@@ -32,16 +32,13 @@ export function Post({ author, publishedAt }: PostProps) {
       </header>
 
       <div className={styles.content}>
-        <p>Fala galeraa 👋</p>
-        <p>
-          Acabei de subir mais um projeto no meu portifólio. É um projeto que fiz no Ignite Lab | React, evento da Rocketseat. O nome do projeto é <strong>Event Platform</strong> 🚀
-        </p>
-        <p>👉<a href="#"> SouzaVitoria/eventplatform </a></p>
-        <p>
-          <a href="#"> #novoprojeto </a>
-          <a href="#"> #ignitelab </a>
-          <a href="#"> #rocketseat </a>
-        </p>
+        {content.map(line => {
+          if (line.type === "paragraph") {
+            return <p> {line.content}</p>
+          } else if (line.type === "link") {
+            return <p><a href="#"> {line.content} </a></p>
+          }
+        })}
       </div>
 
       <form className={styles.commentForm}>
