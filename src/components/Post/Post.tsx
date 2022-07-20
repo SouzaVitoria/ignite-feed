@@ -1,4 +1,4 @@
-import { useEffect, useState, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { format, formatDistanceToNow } from "date-fns"
 import ptBR from "date-fns/locale/pt-BR"
 import { Comment } from '../Comment/Comment';
@@ -17,15 +17,6 @@ export function Post({ author, publishedAt, content }: PostProps) {
     locale: ptBR,
     addSuffix: true
   })
-
-  useEffect(() => {
-    const loadComments = async () => {
-      const response = await fetch("http://localhost:3004/comments")
-      const data = await response.json()
-      setComments(data)
-    }
-    loadComments()
-  }, [])
 
   const handleCreateNewComment = async (event: FormEvent) => {
     event.preventDefault()
