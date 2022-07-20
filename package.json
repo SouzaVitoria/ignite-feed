@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "server": "json-server --watch db/posts.json -p 3004"
+    "server": "json-server --watch db/db.json -p 3004"
   },
   "dependencies": {
     "date-fns": "^2.28.0",

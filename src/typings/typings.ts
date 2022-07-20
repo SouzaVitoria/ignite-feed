@@ -12,3 +12,8 @@ export interface PostProps {
     content: string
   }[]
 }
+
+export interface CommentsProps {
+  id?: number
+  content: string
+}
