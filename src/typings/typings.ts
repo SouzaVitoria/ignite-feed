@@ -1,16 +1,14 @@
+export interface PostContent {
+  type: "paragraph" | "link"
+  content: string
+}
+
 export interface PostProps {
   key?: string
   id?: string
-  author: {
-    avatarUrl: string
-    name: string
-    role: string
-  }
+  author: Author
   publishedAt: Date
-  content: {
-    type: "paragraph" | "link"
-    content: string
-  }[]
+  content: PostContent[]
 }
 
 export interface CommentsProps {
@@ -18,5 +16,16 @@ export interface CommentsProps {
     id: number
     value: string
   }
-  onDeleteComment?: (content: number) => void
+  onDeleteComment?: (commentIdToDelete: number) => void
+}
+
+export interface AvatarProps {
+  hasBorder?: boolean
+  src: string
+}
+
+export interface Author {
+  avatarUrl: string
+  name: string
+  role: string
 }
