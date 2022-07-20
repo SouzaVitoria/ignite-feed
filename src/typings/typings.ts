@@ -1,3 +1,5 @@
+import { ImgHTMLAttributes } from "react"
+
 export interface PostContent {
   type: "paragraph" | "link"
   content: string
@@ -19,9 +21,8 @@ export interface CommentsProps {
   onDeleteComment?: (commentIdToDelete: number) => void
 }
 
-export interface AvatarProps {
+export interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   hasBorder?: boolean
-  src: string
 }
 
 export interface Author {
