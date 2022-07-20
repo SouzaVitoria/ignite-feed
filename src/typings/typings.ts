@@ -14,6 +14,9 @@ export interface PostProps {
 }
 
 export interface CommentsProps {
-  id?: number
-  content: string
+  content: {
+    id: number
+    value: string
+  }
+  onDeleteComment?: (content: number) => void
 }

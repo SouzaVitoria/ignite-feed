@@ -24,12 +24,19 @@ export function Post({ author, publishedAt, content }: PostProps) {
     setComments([
       ...comments,
       {
-        id: comments.length + 1,
-        content: commentText
+        content: {
+          id: comments.length + 1,
+          value: commentText
+        }
       }
     ])
 
     setCommentText("")
+  }
+
+  const deleteComment = (commentIdToDelete: number) => {
+    const commentsWithoutDeletedOne = comments.filter(comment => comment.content.id !== commentIdToDelete)
+    setComments(commentsWithoutDeletedOne)
   }
 
   return (
@@ -71,7 +78,13 @@ export function Post({ author, publishedAt, content }: PostProps) {
 
       <div className={styles.commentList}>
         {comments.map((comment: CommentsProps) => {
-          return <Comment key={comment.id} content={comment.content} />
+          return (
+            <Comment
+              key={comment.content.id}
+              content={comment.content}
+              onDeleteComment={deleteComment}
+            />
+          )
         })}
       </div>
     </article>
