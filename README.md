@@ -1,6 +1,6 @@
 # **Ignite Feed**
 
-Esse projeto é ...
+Esse projeto é uma plataforma de feeds, onde o usuários conseguem adicionar comentários nos posts já publicados
 
 ![](./docs/images/)
 ![](./docs/images/)
@@ -13,13 +13,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org)
+- [JSON Server](https://www.npmjs.com/package/json-server)
 
 ---
 
 ## 💻 **Como executar**
 
 - Clone o repositório
-- Instale as dependências utilizando `yarn` ou `npm install` 
+- Instale as dependências utilizando `yarn` ou `npm install`
+- Rode o comando `yarn server` ou `npm run server` para que o banco de dados carregue todos os posts
 - Rode o comando `yarn dev` ou `npm run dev`
 
 ---
@@ -30,11 +32,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - **Ícones:** [https://phosphoricons.com/](phosphor-react)
 
----
-
-## 📚 **Extensões do VSCode**
-
-...
+- **date-fns:** formatação de datas.
 
 ---
 
